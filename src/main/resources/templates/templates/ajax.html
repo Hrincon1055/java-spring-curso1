@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layout/frontend :: head(~{::title}, ~{::link})">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header th:replace="layout/frontend :: cabecero"></header>
+      <div th:replace="layout/frontend :: menu"></div>
+    </div>
+    <main class="container">
+      <h1>AJAX</h1>
+      <a
+        href="javascript:void(0);"
+        onclick="carga_ajax_get('/templates/peticion', 'hola Henry', 'ajax')"
+        >Haz Clic</a
+      >
+      <div id="ajax"></div>
+    </main>
+    <footer th:replace="layout/frontend :: footer"></footer>
+    <div th:replace="layout/frontend :: scripts"></div>
+  </body>
+</html>

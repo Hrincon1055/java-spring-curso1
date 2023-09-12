@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layout/frontend :: head(~{::title}, ~{::link})">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header th:replace="layout/frontend :: cabecero"></header>
+      <div th:replace="layout/frontend :: menu"></div>
+    </div>
+    <main class="container">
+      <h1>Formulario Simple</h1>
+      <form name="form" th:action="@{/formularios/simple}" method="POST">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            autocomplete="off"
+            class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="correo">E-Mail</label>
+          <input
+            type="text"
+            name="correo"
+            id="correo"
+            class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input
+            type="text"
+            name="password"
+            id="password"
+            class="form-control" />
+        </div>
+        <hr />
+        <a
+          class="btn btn-info"
+          href="javascript:void(0);"
+          onclick="document.form.submit()"
+          >Enviar</a
+        >
+      </form>
+    </main>
+    <footer th:replace="layout/frontend :: footer"></footer>
+    <div th:replace="layout/frontend :: scripts"></div>
+  </body>
+</html>

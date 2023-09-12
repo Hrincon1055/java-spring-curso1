@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 th:text="'Hola desde el template'"></h1>
+    <h2 th:text="'Hola soy ' + ${nombre}"></h2>
+    <h2 th:text="${pais}"></h2>
+  </body>
+</html>

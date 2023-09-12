@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layout/frontend :: head(~{::title}, ~{::link})">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header th:replace="layout/frontend :: cabecero"></header>
+      <div th:replace="layout/frontend :: menu"></div>
+    </div>
+    <main class="container">
+      <h1>Formularios</h1>
+      <ul>
+        <li>
+          <a th:href="@{/formularios/simple}">Simple</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/objeto}">Objeto</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/objeto2}">Objeto-2</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/validaciones}">Validaciones</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/select-dinamico}">Select Dinamico</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/checkbox}">Checkbox</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/flash}">Flash</a>
+        </li>
+        <li>
+          <a th:href="@{/formularios/upload}">Upload</a>
+        </li>
+      </ul>
+    </main>
+    <footer th:replace="layout/frontend :: footer"></footer>
+    <div th:replace="layout/frontend :: scripts"></div>
+  </body>
+</html>
