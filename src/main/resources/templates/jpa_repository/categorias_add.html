@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layout/frontend :: head(~{::title}, ~{::link})">
+    <link th:href="@{/css/estilos.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <header th:replace="layout/frontend :: cabecero"></header>
+      <div th:replace="layout/frontend :: menu"></div>
+    </div>
+    <main class="container">
+      <h1>Formulario Crear Categoria</h1>
+      <div
+        th:if="${mensaje != null}"
+        th:class="'alert alert-'+${clase}"
+        th:text="${mensaje}"></div>
+      <form
+        name="form"
+        th:action="@{/jpa-repository/categorias/add}"
+        method="POST"
+        th:object="${categoria}">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            th:field="*{nombre}"
+            id="nombre"
+            autocomplete="off"
+            class="form-control" />
+          <div
+            class="alert alert-danger"
+            th:if="${errores != null && errores.containsKey('nombre')}"
+            th:text="${errores.nombre}"></div>
+        </div>
+
+        <hr />
+        <a
+          class="btn btn-info"
+          href="javascript:void(0);"
+          onclick="document.form.submit()"
+          >Enviar</a
+        >
+      </form>
+    </main>
+    <footer th:replace="layout/frontend :: footer"></footer>
+    <div th:replace="layout/frontend :: scripts"></div>
+  </body>
+</html>

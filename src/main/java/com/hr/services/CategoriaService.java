@@ -18,4 +18,16 @@ public class CategoriaService {
   public List<CategoriaModel> listar() {
     return this.repositorio.findAll();
   }
+
+  public void guardar(CategoriaModel categoria) {
+    this.repositorio.save(categoria);
+  }
+
+  public boolean buscarPorSlug(String slug) {
+    if (this.repositorio.existsBySlug(slug)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
